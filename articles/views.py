@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from articles.models import Article
 
 # Create your views here.
 
 
 def index(request):
-    response = HttpResponse("Hello, its my first site!")
+    articles = Article.objects.all()
+    context = {
+        'articles': articles
+    }
+    response = render(request, 'articles.html', context)
     return response

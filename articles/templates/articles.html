@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our articles</title>
+</head>
+<body>
+
+    <h1>List of articles</h1>
+{% for article in articles%}
+    <h2>{{ article.title }}</h2>
+    <div style="color: red">{{ article.date }} </div>
+    <p>{{ article.preview }}</p>
+    <a href="#">Read</a>
+{% endfor %}
+</body>
+</html>
